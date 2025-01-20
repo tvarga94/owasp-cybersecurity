@@ -39,13 +39,6 @@ class AdminController extends Controller
         $attributes = $request->validated();
         $this->userRepository->updateUser($user, $attributes);
 
-        Log::info('User updated', [
-            'user_id' => $user->id,
-            'attributes' => $attributes,
-            'admin_id' => auth()->id(),
-            'timestamp' => now(),
-        ]);
-
         return redirect()->route('admin.dashboard')->with('success', 'User updated successfully');
     }
 
@@ -53,12 +46,6 @@ class AdminController extends Controller
     {
         $user = $this->userRepository->findUserById($id);
         $this->userRepository->deleteUser($user);
-
-        Log::info('User deleted', [
-            'user_id' => $user->id,
-            'admin_id' => auth()->id(),
-            'timestamp' => now(),
-        ]);
 
         return redirect()->route('admin.dashboard')->with('success', 'User deleted successfully');
     }
