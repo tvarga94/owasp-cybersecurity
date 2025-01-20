@@ -30,7 +30,6 @@
                 <div class="mb-3">
                     <label for="email" class="form-label"><strong>Email Address:</strong></label>
                     <input
-                        type="email"
                         name="email"
                         id="email"
                         value="{{ $user->email }}"
