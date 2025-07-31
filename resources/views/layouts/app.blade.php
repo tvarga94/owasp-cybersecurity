@@ -23,7 +23,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: repeat;
-            min-height: 100vh;
+            min-height: 100vh;git
             height: auto;
         }
 
@@ -42,5 +42,5 @@
     </main>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<script src="https://unpkg.com/htmx.org@1.9.9" defer></script></body>
 </html>

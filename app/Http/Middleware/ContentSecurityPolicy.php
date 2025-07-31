@@ -14,7 +14,7 @@ class ContentSecurityPolicy
 
         $csp = [
             "default-src 'self'",
-            "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com",
+            "script-src 'self' https://cdn.jsdelivr.net https://unpkg.com",
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net https://cdn.jsdelivr.net https://unpkg.com",
             "font-src 'self' https://fonts.gstatic.com https://fonts.bunny.net",
             "img-src 'self' data:",
@@ -22,6 +22,7 @@ class ContentSecurityPolicy
             "frame-ancestors 'none'",
             "object-src 'none'",
             "base-uri 'self'",
+            'report-uri /csp-report',
         ];
 
         $response->headers->set('Content-Security-Policy', implode('; ', $csp));

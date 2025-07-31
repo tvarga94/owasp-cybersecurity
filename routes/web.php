@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SecurityReportController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('throttle:10,1')->group(function () {
@@ -10,6 +11,8 @@ Route::middleware('throttle:10,1')->group(function () {
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/csp-report', [SecurityReportController::class, 'cspReport']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
