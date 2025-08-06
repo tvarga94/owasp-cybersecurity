@@ -564,6 +564,11 @@
             text-align: center
         }
 
+        .main-text {
+            color: white;
+            font-weight: bold
+        }
+
         .font-sans {
             font-family: Figtree, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji
         }
@@ -912,13 +917,13 @@
                 <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                     <img src="{{ asset('images/home1.jpg') }}" alt="home-page-picture-astronaut" class="rounded-xl" />
                     <img src="{{ asset('images/home2.jpg') }}" alt="home-page-picture-spacecraft"/>
-                    <span style="color: white; font-weight: bold">
+                    <span class="main-text">
                       On July 20, 1969, the Apollo 11 mission achieved one of humanity's greatest feats: landing on the moon. Neil Armstrong, Buzz Aldrin, and Michael Collins were the astronauts on this historic mission. As the world watched, Armstrong became the first human to set foot on the lunar surface, uttering the iconic words, "That's one small step for man, one giant leap for mankind."
 The journey to the moon was a result of years of intense research, engineering, and dedication. The astronauts traveled 240,000 miles through space in Apollo 11. Armstrong and Aldrin descended to the moon's surface in the lunar module "Eagle," while Collins orbited above in the command module.
 Armstrong and Aldrin spent about two and a half hours on the moon, conducting experiments and collecting samples. They set up scientific instruments, took photographs, and planted the American flag. After completing their tasks, they returned to the lunar module and rejoined Collins for the journey back to Earth, safely landing in the Pacific Ocean on July 24, 1969.
 The first moon landing demonstrated the remarkable capabilities of human innovation and teamwork. It inspired generations to dream big and pursue careers in science and space exploration, symbolizing humanity's boundless potential for achievement.
                     </span>
-                    <span style="color: white; font-weight: bold">
+                    <span class="main-text">
                       The universe is unimaginably vast, containing billions of galaxies, each with billions of stars. But did you know that this enormous expanse is actually getting bigger all the time? This idea, known as the expansion of the universe, started with the Big Bang about 13.8 billion years ago. Initially, scientists thought that the universe's expansion might slow down over time because of the gravitational pull from all the matter within it, like stars, planets, and galaxies.
 However, a surprising discovery in the late 1990s changed everything. Scientists observed distant exploding stars, called supernovae, and noticed something unexpected. Instead of slowing down, the expansion of the universe was speeding up! This was a groundbreaking revelation that meant something else was at play, pushing the universe to expand faster and faster.
 This mysterious force was named "dark energy." Despite its name, we don't know much about dark energy, other than it makes up about 68% of the universe. Imagine dark energy as an invisible hand that's pulling the universe apart, making space itself stretch out. This stretching causes galaxies to move away from each other at an accelerating pace.

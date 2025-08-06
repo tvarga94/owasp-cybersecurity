@@ -13,7 +13,11 @@ class ContentSecurityPolicy
         $response = $next($request);
 
         if ($request->is('api/documentation')) {
-            $csp = "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline';";
+            $csp = implode('; ', [
+                "default-src 'self'",
+                "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com",
+                "style-src 'self' 'unsafe-inline'",
+            ]);
             $response->headers->set('Content-Security-Policy', $csp);
         } else {
             $cspArray = [
@@ -22,8 +26,11 @@ class ContentSecurityPolicy
                 "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.bunny.net https://cdn.jsdelivr.net https://unpkg.com",
                 "font-src 'self' https://fonts.gstatic.com https://fonts.bunny.net",
                 "img-src 'self' data:",
+                "form-action 'self'",
                 "connect-src 'self'",
+                "frame-src 'none'",
                 "frame-ancestors 'none'",
+                "media-src 'none'",
                 "object-src 'none'",
                 "base-uri 'self'",
                 'report-uri /csp-report',
@@ -31,6 +38,16 @@ class ContentSecurityPolicy
             $response->headers->set('Content-Security-Policy', implode('; ', $cspArray));
         }
 
+        $reportTo = json_encode([
+            'group' => 'csp-endpoint',
+            'max_age' => 10886400,
+            'endpoints' => [
+                ['url' => url('/csp-report')],
+            ],
+            'include_subdomains' => true,
+        ]);
+
+        $response->headers->set('Report-To', $reportTo);
         $response->headers->set('Strict-Transport-Security', 'max-age=63072000; includeSubDomains; preload');
         $response->headers->set('X-Frame-Options', 'DENY');
         $response->headers->set('X-Content-Type-Options', 'nosniff');
