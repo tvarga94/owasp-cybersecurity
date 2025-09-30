@@ -44,7 +44,7 @@ Ensure you have the following installed:
 - MySQL
 - Node.js and npm
 
-### Installation Steps
+### Installation Steps2
 
 1. Clone the repository:
    ```bash
@@ -67,7 +67,7 @@ Update the .env file with your database credentials:
     DB_PORT=3306
     DB_DATABASE=owasp_security
     DB_USERNAME=your_username
-    DB_PASSWORD=your_password
+    DB_PASSWORD=your_password23443
 
 4. Generate the application key
     ```bash
